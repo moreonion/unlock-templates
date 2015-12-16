@@ -40,6 +40,23 @@ $(window).load(function(){
     var self = $(e.target);
     if (!self.is(':empty')) {
       self.parent().not('form').addClass('validationError');
+      self.parent().siblings('.eaFormElementLabel').addClass('validationError');
+    }
+  });
+
+  var eaerrors = $('#eaerrors');
+  if (eaerrors.text().trim() == "") {
+    eaerrors.addClass('empty');
+  } else {
+    eaerrors.removeClass('empty');
+  }
+  // add class to field, where error occured
+  $(window).on('DOMSubtreeModified', '#eaerrors', function(e) {
+    var self = $(e.target);
+    if (self.text().trim() == "") {
+      self.addClass('empty');
+    } else {
+      self.removeClass('empty');
     }
   });
 
