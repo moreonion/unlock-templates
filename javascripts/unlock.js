@@ -1,6 +1,7 @@
 $(window).load(function(){
 
-  // two column layout
+// ---------- two column layout -------------------------------------
+
   if ($('.eaRightColumnContent').length && $('.eaLeftColumnContent').length) {
     sortTwoColumn();
     $('body').addClass('twocolumn');
@@ -15,6 +16,21 @@ $(window).load(function(){
     $('body').addClass('onecolumn');
   }
 
+// ---------- "show more" toggle ------------------------------------
+
+  $('#background-info').css('display', 'none');
+  $('.info-toggle').on('click', function(e) {
+    var $toggle = $(this);
+    var $target = $('#background-info');
+    if ($target.length > 0) {
+      $target.slideToggle('fast');
+    }
+    e.preventDefault();
+    return false;
+  });
+
+// ---------- fancy forms -------------------------------------------
+
   // enable Picker and Selector
   // see http://www.benplum.com/formstone/
   if (typeof $.fn.selecter == 'function') {
@@ -23,6 +39,8 @@ $(window).load(function(){
   if (typeof $.fn.picker == 'function') {
     $('input[type=radio], input[type=checkbox]').picker();
   }
+
+// ---------- validations -------------------------------------------
 
   // move validation icon next to label
   // and the error message below the label
@@ -63,6 +81,8 @@ $(window).load(function(){
     }
   });
 
+// ---------- fancy donation button ---------------------------------
+
   // template signified by {}, between the braces is the initial value
   // no escaping of { or } possible, simply: do not use them as text
   // save the template in a variable for use below
@@ -81,7 +101,9 @@ $(window).load(function(){
     var newBtnLabel = origBtnLabel.replace(/\{.*\}/, val);
     $('.eaSubmitButton').val(newBtnLabel);
   });
-  //
+
+// ---------- progress bar ------------------------------------------
+
   // configure progressbar = thermometer = counter
   var $thermometerEl = $('.pgbar-thermometer');
   var thermometerTarget = 250; // default
@@ -111,5 +133,12 @@ $(window).load(function(){
     service: 'EaEmailAOTarget',
     targetDataColumn: 'participatingSupporters'
   });
+
+// ---------- cross browser fixes -----------------------------------
+
+  // object-fit bug in Firefox 43 & 44 -> treat as no-objectfit
+  if (navigator.userAgent.match(/Firefox\/(43|44)\./)) {
+    $('html').removeClass('objectfit').addClass('no-objectfit');
+  }
 
 });

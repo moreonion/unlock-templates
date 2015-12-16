@@ -634,6 +634,7 @@ h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   width: 90%;
+  z-index: 1;
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-left: 1.5rem;
@@ -790,6 +791,7 @@ h6 {
  * top to bottom styling
  * ================================================================== */
 /* ---------- background image -------------------------------------- */
+#background-image,
 .background-image {
   position: fixed;
   left: 0;
@@ -801,6 +803,7 @@ h6 {
   /* for Chrome, FF, Opera, Safari & Android */
 }
 @media screen and (orientation: landscape) {
+  #background-image img,
   .background-image img {
     width: 100%;
     height: auto;
@@ -808,6 +811,7 @@ h6 {
   }
 }
 @media screen and (orientation: portrait) {
+  #background-image img,
   .background-image img {
     height: 100%;
     width: auto;
@@ -815,6 +819,7 @@ h6 {
     max-width: none;
   }
 }
+.objectfit #background-image img,
 .objectfit .background-image img {
   -o-object-fit: cover;
   object-fit: cover;
@@ -857,6 +862,96 @@ h6 {
     min-height: none;
   }
 }
+#background-info {
+  background-color: #ffffff;
+  z-index: -1;
+  margin-top: -4.33333333em;
+  margin-bottom: 1.44444444em;
+  padding-top: 4.33333333em;
+  padding-bottom: 0.72222222em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+  #background-info {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 780px) {
+  #background-info {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1150px) {
+  #background-info {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+#background-info:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -1.44444444em;
+  left: 0;
+  background-color: inherit;
+  z-index: -1;
+  -webkit-transform: skewY(1.6deg);
+  -moz-tranform: skewY(1.6deg);
+  -ms-transform: skewY(1.6deg);
+  transform: skewY(1.6deg);
+}
+#background-info:before {
+  height: 1.44444444em;
+  top: 100%;
+  margin-top: -0.72222222em;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+  #background-info {
+    padding-bottom: 2.88888889em;
+  }
+}
+@media screen and (min-width: 780px) {
+  #background-info {
+    margin-top: -1.44444444em;
+    padding-top: 2.88888889em;
+    padding-bottom: 1.44444444em;
+    position: relative;
+  }
+  #background-info:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -1.44444444em;
+    left: 0;
+    background-color: inherit;
+    z-index: -1;
+    -webkit-transform: skewY(-0.8deg);
+    -moz-tranform: skewY(-0.8deg);
+    -ms-transform: skewY(-0.8deg);
+    transform: skewY(-0.8deg);
+  }
+  #background-info:before {
+    width: 101%;
+    height: 110%;
+    top: -5%;
+  }
+}
+.info-toggle {
+  display: block;
+  margin-bottom: 1.44444444em;
+  cursor: pointer;
+}
 /* ---------- progress bar / thermometer / counter ------------------ */
 .pgbar-thermometer {
   margin-top: 1.44444444em;
@@ -890,6 +985,7 @@ h6 {
   height: 30px;
   min-width: 16px;
   min-width: 1.5em;
+  width: 0%;
 }
 .pgbar-thermometer .t_body .t_level .t_current {
   position: relative;
@@ -1010,6 +1106,12 @@ h6 {
 .eaLabelSpacer,
 br[clear="all"] {
   display: none;
+}
+.eaFormField,
+.eaSwitchSubjectContainer,
+.eaSwitchTemplateContainer,
+.eaSenderMailTemplate {
+  margin-bottom: 0.72222222em;
 }
 /* ---------- buttons ----------------------------------------------- */
 input[type="submit"],
@@ -1194,6 +1296,9 @@ input[type="checkbox"] {
 .picker.picker-checkbox .picker-handle {
   margin-top: 1px;
 }
+.picker.picker-checkbox.checked .picker-flag {
+  background: #ffffff url(../images/jquery.fs.picker-icon.png) no-repeat scroll center center;
+}
 /* ---------- donation amount buttons ------------------------------- */
 /* add correct field id here */
 #Donation_amountField,
@@ -1303,6 +1408,20 @@ input[type="checkbox"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* ---------- email message ----------------------------------------- */
+textarea.eaSenderMailTemplate,
+.eaMessageContentContainer textarea {
+  height: 10em;
+}
+.eaMessageCharacterCount {
+  font-size: 0.88888889em;
+  font-size: 0.88888889rem;
+  line-height: 1.625em;
+  margin-bottom: 1.625em;
+  text-align: right;
+  padding-right: .5em;
+  color: #a9a9a9;
+}
 /* ---------- label, legend, description --------------------------- */
 label,
 .eaFormElementLabel,
@@ -1315,9 +1434,6 @@ label,
   display: block;
   margin-bottom: 0;
   color: #424242;
-}
-.eaFormElementLabel {
-  padding-top: 0.72222222em;
 }
 .eaQuestionLabel {
   margin-bottom: 0.72222222em;

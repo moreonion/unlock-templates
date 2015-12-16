@@ -12,7 +12,7 @@ Also, when copying text from a word processor (e.g. Word or Pages) to an EN copy
 ## big background image
 
 ```html
-<div class="background-image">
+<div id="background-image">
   your background image
 </div>
 ```
