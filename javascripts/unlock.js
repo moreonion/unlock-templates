@@ -41,6 +41,9 @@ $(window).load(function(){
     if (!self.is(':empty')) {
       self.parent().not('form').addClass('validationError');
       self.parent().siblings('.eaFormElementLabel').addClass('validationError');
+    } else {
+      self.parent().not('form').removeClass('validationError');
+      self.parent().siblings('.eaFormElementLabel').removeClass('validationError');
     }
   });
 
