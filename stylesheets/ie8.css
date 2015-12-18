@@ -1,0 +1,89 @@
+.en_left_wrapper,
+.en_right_wrapper {
+  float: left;
+  clear: left;
+}
+.twocolumn .en_left_wrapper {
+  float: left;
+  clear: left;
+  width: 48%;
+}
+.twocolumn .en_right_wrapper {
+  float: right;
+  clear: right;
+  width: 52%;
+}
+.onecolumn form {
+  width: 48%;
+}
+.middle {
+  width: 85%;
+}
+
+h1 {
+  padding-left: 2rem;
+  width: 80%;
+  padding-right: 1em;
+  width: auto;
+  font-size: 2.22222222em;
+  font-size: 2.22222222rem;
+  line-height: 1.3em;
+  margin-bottom: 0.65em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+#header .logo {
+  width: auto;
+  margin-left: -80px;
+  margin-bottom: -2.88888889em;
+  margin-top: 1.44444444em;
+}
+
+#right_wrapper1 {
+  min-height: none;
+}
+
+.en_left_wrapper,
+.onecolumn form {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#background-info {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 0;
+  padding-top: 2.88888889em;
+  padding-bottom: 1.44444444em;
+  position: relative;
+}
+#background-info:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+  z-index: -1;
+  -webkit-transform: skewY(-0.8deg);
+  -moz-tranform: skewY(-0.8deg);
+  -ms-transform: skewY(-0.8deg);
+  transform: skewY(-0.8deg);
+  width: 101%;
+  height: 110%;
+  top: -5%;
+}
+
+a.close {
+  display: block;
+}
+
+#Donation_amountField .picker .picker-label,
+#Donation_amount_or_otherField .picker .picker-label {
+  margin-bottom: 0;
+}
+
+#eaerrors {
+  margin-top: 2.88888889em;
+  margin-bottom: 2.88888889em;
+}
