@@ -48,6 +48,16 @@ The `info-toggle` element enables the "show more info" logic. A click on the tog
 
 This makes your videos responsive, so they will always fit on the screen (even on tiny mobile screens).
 
+## validations
+
+Make sure you enable the error alerts for your forms like on the "More Onion WriteToTarget TEST" test campaign (http://e-activist.com/ea-action/action?ea.campaign.id=41789&ea.client.id=1810&ea.tracking.id=&ea.campaign.mode=DEMO). Otherwise the validations will show outside above the form.
+
+## donate button
+
+The donate button can alter it's label when the donation amount changes. To achieve this you have to put curly braces ("{}") in the text of the submit button. The "{}" will be substituted for the selected donation amount value or the other amount value.
+
+You can define an default amount when you put text between the curly braces: so on initial page load the string "{24}" will be replaced with "24".
+
 ## progress bar
 
 ```html
@@ -101,6 +111,8 @@ These are social share buttons for Facebook, Twitter and email sharing:
 ```
 
 Make sure to replace the `{{placeholder parts}}` with the real urls and share texts! The name between `<span>name</span>` is what's displayed on the button itself, the `title` pops up when hovering over the button. (`<i></i>` makes space for the icon, which will be inserted automatically.)
+
+The email share action currently is called "More Onion Email a Friend Test".
 
 ### submission tracking
 

@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(document).ready(function(){
 
 // ---------- two column layout -------------------------------------
 
@@ -24,7 +24,9 @@ $(window).load(function(){
     var $target = $('#background-info');
     if ($target.length > 0) {
       $target.slideDown();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     }
+    e.preventDefault();
   });
   $('#background-info .close').on('click', function(e) {
     var $toggle = $(this);
