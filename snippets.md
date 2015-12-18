@@ -24,15 +24,15 @@ Just upload your image to a copy box and place this wrapper around it.
 In the left column:
 
 ```html
-<a class="info-toggle">More info</a>
+<a href="#background-info" class="info-toggle">More info</a>
 ```
 
 In the right column:
 
 ```html
-<div id="background-info">
-  <h2>Background info</h2>
-  <p>more more more info</p>
+<div id="background-info" name="background-info">
+  <a class="close" aria-label="Close">&#215;</a>
+  your content
 </div>
 ```
 
@@ -65,6 +65,8 @@ This makes your videos responsive, so they will always fit on the screen (even o
 ```
 
 Change the value of data-target according to your needs. Change data-start to add an initial value for the progress bar, e.g. offline supporters. If the data-attributes are missing, the default values shown above will be used instead.
+
+Change the value of max-count accordingly (to your new target value).
 
 Unfortunately, this is a little tricky because the EN editor keeps deleting all data-tags. To save them, you'll have to disable the editor first by clicking the top left x-button. Feel very welcome to complain to Engaging Networks about it!
 

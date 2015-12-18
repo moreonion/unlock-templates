@@ -862,9 +862,15 @@ h6 {
     min-height: none;
   }
 }
+/* ---------- more info --------------------------------------------- */
+.info-toggle {
+  display: block;
+  margin-bottom: 1.44444444em;
+  cursor: pointer;
+}
 #background-info {
   background-color: #ffffff;
-  z-index: -1;
+  z-index: 0;
   margin-top: -4.33333333em;
   margin-bottom: 1.44444444em;
   padding-top: 4.33333333em;
@@ -947,10 +953,28 @@ h6 {
     top: -5%;
   }
 }
-.info-toggle {
-  display: block;
-  margin-bottom: 1.44444444em;
+a.close {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "Proxima Nova W07", "Proxima Nova W08", "Helvetica Neue", Helvetica, Arial, sans;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 3em;
+  padding: 0.4em 0.2em;
+  color: #f1f1f1;
   cursor: pointer;
+}
+a.close:hover,
+a.close:focus {
+  color: #d8d8d8;
+  text-decoration: none;
+}
+@media screen and (min-width: 780px) {
+  a.close {
+    display: block;
+  }
 }
 /* ---------- progress bar / thermometer / counter ------------------ */
 .pgbar-thermometer {
@@ -1294,7 +1318,7 @@ input[type="checkbox"] {
   margin-top: 3px;
 }
 .picker.picker-checkbox .picker-handle {
-  margin-top: 1px;
+  margin-top: 3px;
 }
 .picker.picker-checkbox.checked .picker-flag {
   background: #ffffff url(../images/jquery.fs.picker-icon.png) no-repeat scroll center center;

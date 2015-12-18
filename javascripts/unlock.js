@@ -23,10 +23,16 @@ $(window).load(function(){
     var $toggle = $(this);
     var $target = $('#background-info');
     if ($target.length > 0) {
-      $target.slideToggle('fast');
+      $target.slideDown();
+    }
+  });
+  $('#background-info .close').on('click', function(e) {
+    var $toggle = $(this);
+    var $target = $('#background-info');
+    if ($target.length > 0) {
+      $target.slideUp();
     }
     e.preventDefault();
-    return false;
   });
 
 // ---------- fancy forms -------------------------------------------

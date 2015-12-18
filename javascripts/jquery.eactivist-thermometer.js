@@ -39,7 +39,7 @@
 			if(settings.dataUrl.length){
 				dataUrl = settings.dataUrl;
 			}else{
-				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' + settings.service + '&resultType=summary&contentType=json&token=' + settings.token + '&campaignId=' + settings.campaignId + '&callback=?';
+				dataUrl = '//e-activist.com/ea-dataservice/data.service?service=' + settings.service + '&resultType=summary&contentType=json&token=' + settings.token + '&campaignId=' + settings.campaignId + '&callback=?';
 			}
 			
 			//get the data and iterate through it
