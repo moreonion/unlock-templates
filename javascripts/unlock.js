@@ -142,6 +142,17 @@ $(document).ready(function(){
     targetDataColumn: 'participatingSupporters'
   });
 
+// ---------- undo EN contact list formatting -----------------------
+
+  $('.eaContactNameContainer').each(function(){
+    var $checkbox = $(this).children('.eaContactSelectCheckbox');
+    if ($checkbox.length) {
+      // keep checkbox + label, remove node text + &nbsp;
+      $(this).addClass('has-checkbox').wrapInner('<div class="remove"></div>');
+      $('.remove', this).replaceWith($checkbox);
+    }
+  });
+
 // ---------- cross browser fixes -----------------------------------
 
   // object-fit bug in Firefox 43 & 44 -> treat as no-objectfit

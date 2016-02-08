@@ -1467,7 +1467,7 @@ input[type="checkbox"] {
 /* ---------- email message ----------------------------------------- */
 textarea.eaSenderMailTemplate,
 .eaMessageContentContainer textarea {
-  height: 10em;
+  min-height: 15em;
 }
 .eaMessageCharacterCount {
   font-size: 0.88888889em;
@@ -1641,82 +1641,68 @@ label,
 /* ==================================================================
  * contact lists
  * ================================================================== */
+.eaRecipientBlock,
+.eaSenderBlock {
+  margin-bottom: 0.72222222em;
+  padding: 0.72222222em 1em;
+  background-color: #f8fafa;
+}
+.eaRecipientBlock br:first-child,
+.eaSenderBlock br:first-child {
+  display: none;
+}
 /* ---------- contact ----------------------------------------------- */
 /* select contact instruction text */
+.eaSelectContactInstruction {
+  display: block;
+  margin-top: 1.44444444em;
+}
 /* container for contacts */
 .eaContactsContainer {
-  float: left;
-  width: 95%;
-  position: relative;
-  padding: 10px;
-  background-color: #ffffff;
-  margin-top: 10px;
+  margin-bottom: 1.44444444em;
 }
 /* contact name container */
 .eaContactNameContainer {
-  float: left;
-  position: relative;
-  clear: left;
   font-family: "Proxima Nova W07", "Proxima Nova W08", "Helvetica Neue", Helvetica, Arial, sans;
   font-weight: bold;
   font-style: normal;
-  padding-right: 10px;
-  width: 48%;
-  height: 25px;
+  margin-top: 0.48148148em;
 }
 /* contact organization container */
-.eaContactOrgContainer {
-  float: left;
-  width: 48%;
-  position: relative;
+.eaContactNameContainer.has-checkbox + .eaContactOrgContainer {
+  margin-left: 40px;
 }
 /* contact biographyLink container */
 .eaContactBiographyLinkContainer {
-  float: left;
   position: relative;
   font-family: "Proxima Nova W07", "Proxima Nova W08", "Helvetica Neue", Helvetica, Arial, sans;
   font-weight: bold;
   font-style: normal;
-  height: 25px;
   padding-top: 4px;
-  width: 125px;
 }
 /* contact biography container */
 .eaContactBiographyContainer {
-  float: left;
   position: relative;
-  width: 90%;
-  clear: left;
-  padding-left: 0;
   padding-right: 0;
 }
 /* contact biography list */
 .eaContactBiographyList {
-  float: left;
   position: relative;
-  width: 350px;
   margin-top: 20px;
 }
 /* contact biography line container */
 .eaContactBiographyLineContainer {
-  clear: left;
   padding-left: 0px;
   padding-bottom: 5px;
   list-style-type: disc;
 }
 .eaContactBiographyPictureContainer {
-  float: left;
   position: relative;
   width: 125px;
 }
 /* contact select checkbox */
-.eaContactSelectCheckbox {
-  color: #666666;
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
-  border-left-style: none;
-  margin-right: 5px;
+.eaContactSelectCheckbox label {
+  position: static!important;
 }
 /* ---------- Multiple contact tabbed list--------------------------- */
 /* container for a contact */
