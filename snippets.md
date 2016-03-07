@@ -80,6 +80,18 @@ Change the value of max-count accordingly (to your new target value).
 
 Unfortunately, this is a little tricky because the EN editor keeps deleting all data-tags. To save them, you'll have to disable the editor first by clicking the top left x-button. Feel very welcome to complain to Engaging Networks about it!
 
+## Actionpanel: recent supporters
+
+```html
+<div id="actionpanel-supporters" class="clearfix">
+  <h3>Who’s taking action?</h3>
+  Paste your Actionpanel snippet here
+</div>
+```
+
+This will give the Actionpanel supporters widget the right look. Add this snippet to the right column, between the heading and the background info.
+
+
 ## thank you page
 
 ### share links

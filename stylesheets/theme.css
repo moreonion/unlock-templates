@@ -1924,6 +1924,65 @@ ul.share-links .facebook .button:active span.icon {
   background-position: -140px -394px;
 }
 /* ==================================================================
+ * Actionpanel widgets
+ * ================================================================== */
+/* ---------- recent supporters ------------------------------------- */
+#actionpanel-supporters {
+  margin-top: 1.44444444em;
+  margin-bottom: 2.88888889em;
+}
+#actionpanel-supporters .actionpanel-widget {
+  padding: 0;
+  background-color: transparent;
+}
+#actionpanel-supporters h2,
+#actionpanel-supporters h3 {
+  background-color: #581757;
+  color: #ffffff;
+  font-family: "Proxima Nova W07", "Proxima Nova W08", "Helvetica Neue", Helvetica, Arial, sans;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.44444444em;
+  margin-bottom: 1.44444444em;
+  padding-right: 2em;
+}
+#actionpanel-supporters h2,
+#actionpanel-supporters h3,
+#actionpanel-supporters .actionpanel-widget-supporters-supporter {
+  float: left;
+  clear: both;
+  margin-bottom: 0.48148148em;
+  padding-top: 0.45em;
+  padding-bottom: 0.45em;
+  padding-left: 1.6em;
+}
+#actionpanel-supporters .actionpanel-widget-supporters-supporter {
+  background-color: #ffffff;
+  padding-right: 1em;
+}
+#actionpanel-supporters .actionpanel-widget-supporters-name {
+  color: #24b0a5;
+  margin-right: 1em;
+}
+@media screen and (min-width: 560px) {
+  #actionpanel-supporters .actionpanel-widget-supporters-name {
+    margin-right: 3.2em;
+  }
+}
+#actionpanel-supporters .actionpanel-widget-supporters-time {
+  font-size: 0.8em;
+  color: #C0C0C0;
+}
+@media screen and (min-width: 780px) {
+  #actionpanel-supporters {
+    position: absolute;
+    top: 17.33333333em;
+    z-index: -1;
+  }
+}
+/* ==================================================================
  * Cross browser fixes
  * ================================================================== */
 /* ---------- datepicker hides page content on some browsers ---------*/
