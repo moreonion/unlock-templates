@@ -96,19 +96,21 @@ $(document).ready(function(){
   // save the template in a variable for use below
   var origBtnLabel = $('.eaSubmitButton').val();
   // initialize with the default value
-  var defaultBtnLabel = origBtnLabel.replace(/\{(.*)\}/, function (match, p1) {
-    return p1;
-  });
-  $('.eaSubmitButton').val(defaultBtnLabel);
-  // update the label on change
-  $('[name="Donation amount"]').on('change', function() {
-    var val = $('[name="Donation amount"]:checked').val();
-    if (val == "Other") {
-      val = $('[name="Donation amount"][type=text]').val();
-    }
-    var newBtnLabel = origBtnLabel.replace(/\{.*\}/, val);
-    $('.eaSubmitButton').val(newBtnLabel);
-  });
+  if (origBtnLabel) {
+    var defaultBtnLabel = origBtnLabel.replace(/\{(.*)\}/, function (match, p1) {
+      return p1;
+    });
+    $('.eaSubmitButton').val(defaultBtnLabel);
+    // update the label on change
+    $('[name="Donation amount"]').on('change', function() {
+      var val = $('[name="Donation amount"]:checked').val();
+      if (val == "Other") {
+        val = $('[name="Donation amount"][type=text]').val();
+      }
+      var newBtnLabel = origBtnLabel.replace(/\{.*\}/, val);
+      $('.eaSubmitButton').val(newBtnLabel);
+    });
+  }
 
 // ---------- progress bar ------------------------------------------
 
