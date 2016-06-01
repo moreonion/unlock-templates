@@ -61,33 +61,38 @@ $(document).ready(function(){
     self.appendTo(field);
   });
 
-  // add class to field, where error occured
-  $(window).on('DOMSubtreeModified', '.eaErrorMessage', function(e) {
-    var self = $(e.target);
-    if (!self.is(':empty')) {
-      self.parent().not('form').addClass('validationError');
-      self.parent().siblings('.eaFormElementLabel').addClass('validationError');
+  // add class to field where error occured
+  // except IE 11 because of sudden crashes on some actions z#1374
+  if (!navigator.userAgent.match(/Trident\/7\./)) {
+    $(window).on('DOMSubtreeModified', '.eaErrorMessage', function(e) {
+      var self = $(e.target);
+      if (!self.is(':empty')) {
+        self.parent().not('form').addClass('validationError');
+        self.parent().siblings('.eaFormElementLabel').addClass('validationError');
+      } else {
+        self.parent().not('form').removeClass('validationError');
+        self.parent().siblings('.eaFormElementLabel').removeClass('validationError');
+      }
+    });
+    // toggle class to indicate empty #eaerrors
+    var eaerrors = $('#eaerrors');
+    if (eaerrors.text().trim() == "") {
+      eaerrors.addClass('empty');
     } else {
-      self.parent().not('form').removeClass('validationError');
-      self.parent().siblings('.eaFormElementLabel').removeClass('validationError');
+      eaerrors.removeClass('empty');
     }
-  });
-
-  var eaerrors = $('#eaerrors');
-  if (eaerrors.text().trim() == "") {
-    eaerrors.addClass('empty');
+    $(window).on('DOMSubtreeModified', '#eaerrors', function(e) {
+      var self = $(e.target);
+      if (self.text().trim() == "") {
+        self.addClass('empty');
+      } else {
+        self.removeClass('empty');
+      }
+    });
   } else {
-    eaerrors.removeClass('empty');
+    // trying to hide #eaerror container on IE 11 when empty
+    $('#eaerrors').css('padding', 0);
   }
-  // add class to field, where error occured
-  $(window).on('DOMSubtreeModified', '#eaerrors', function(e) {
-    var self = $(e.target);
-    if (self.text().trim() == "") {
-      self.addClass('empty');
-    } else {
-      self.removeClass('empty');
-    }
-  });
 
 // ---------- fancy donation button ---------------------------------
 

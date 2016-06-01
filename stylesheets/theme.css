@@ -1090,7 +1090,6 @@ a.close:focus {
 }
 .pgbar-thermometer .t_body .t_level {
   background-color: #6c276a;
-  background: url('../images/pgbar_end.png') no-repeat #6c276a center right;
   height: 30px;
   min-width: 16px;
   min-width: 1.5em;
@@ -1637,6 +1636,12 @@ label,
     margin-top: 2.88888889em;
     margin-bottom: 2.88888889em;
   }
+}
+#errorheading {
+  color: #ffffff;
+  font-family: "Proxima Nova W07", "Proxima Nova W08", "Helvetica Neue", Helvetica, Arial, sans;
+  font-weight: bold;
+  font-style: normal;
 }
 /* ==================================================================
  * contact lists
