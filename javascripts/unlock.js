@@ -43,6 +43,10 @@ $(document).ready(function(){
   // see http://www.benplum.com/formstone/
   if (typeof $.fn.selecter == 'function') {
     $('select').selecter();
+    // fix for selecter not working on Android 6+ and Android Chrome 50+
+    if (navigator.userAgent.match(/Android (\d+)\./i)) {
+      $('.selecter').css('pointer-events', 'none');
+    }
   }
   if (typeof $.fn.picker == 'function') {
     $('input[type=radio], input[type=checkbox]').picker();
